@@ -9,6 +9,7 @@ using u_navigator_backend.Application.Interfaces;
 using u_navigator_backend.Application.Services;
 using System.Text;
 
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("API/appsettings.json", optional: false, reloadOnChange: true);
 
