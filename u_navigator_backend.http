@@ -1,0 +1,6 @@
+@u_navigator_backend_HostAddress = http://localhost:5082
+
+GET {{u_navigator_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
