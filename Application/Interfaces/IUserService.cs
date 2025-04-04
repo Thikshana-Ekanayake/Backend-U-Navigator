@@ -4,6 +4,6 @@ namespace u_navigator_backend.Application.Interfaces
 {
     public interface IUserService
     {
-        Task<User> GetUserByIdAsync(string userId);
+        Task<object?> GetUserByIdAsync(string userId);
     }
 }

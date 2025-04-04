@@ -1,6 +1,7 @@
 ﻿using MongoDB.Driver;
 using u_navigator_backend.Domain.Models;
 using u_navigator_backend.Infrastructure;
+using u_navigator_backend.Infrastructure.Repositories.Interfaces;
 
 namespace u_navigator_backend.Infrastructure.Repositories
 {
@@ -31,6 +32,12 @@ namespace u_navigator_backend.Infrastructure.Repositories
         public async Task AddUserAsync(User user)
         {
             await _users.InsertOneAsync(user);
+        }
+
+        public async Task UpdateUserAsync(User user)
+        {
+            var filter = Builders<User>.Filter.Eq(u => u.Id, user.Id);
+            await _users.ReplaceOneAsync(filter, user);
         }
     }
 }

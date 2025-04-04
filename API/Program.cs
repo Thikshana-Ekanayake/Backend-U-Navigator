@@ -8,6 +8,7 @@ using u_navigator_backend.Infrastructure.Repositories;
 using u_navigator_backend.Application.Interfaces;
 using u_navigator_backend.Application.Services;
 using System.Text;
+using u_navigator_backend.Infrastructure.Repositories.Interfaces;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -45,6 +46,8 @@ builder.Services.AddOpenApi();
 
 // Register dependencies
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
+builder.Services.AddSingleton<IStudentRepository, StudentRepository>();
+builder.Services.AddSingleton<IConsultantRepository, ConsultantRepository>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();

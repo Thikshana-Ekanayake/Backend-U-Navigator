@@ -20,5 +20,9 @@ namespace u_navigator_backend.Domain.Models
 
         [BsonElement("role")]
         public string Role { get; set; } = "User"; // Default role
+
+        [BsonElement("roleDataId")]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? RoleDataId { get; set; } // Reference to the role-specific collection
     }
 }

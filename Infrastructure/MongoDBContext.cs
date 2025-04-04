@@ -16,5 +16,7 @@ namespace u_navigator_backend.Infrastructure
         }
 
         public IMongoCollection<User> Users => _database.GetCollection<User>("Users");
+        public IMongoCollection<Student> Students => _database.GetCollection<Student>("Users_Studnets");
+        public IMongoCollection<Consultant> Consultants => _database.GetCollection<Consultant>("Users_Consultants");
     }
 }

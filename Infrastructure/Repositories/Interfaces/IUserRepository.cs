@@ -1,6 +1,6 @@
 ﻿using u_navigator_backend.Domain.Models;
 
-namespace u_navigator_backend.Infrastructure.Repositories
+namespace u_navigator_backend.Infrastructure.Repositories.Interfaces
 {
     public interface IUserRepository
     {
@@ -8,5 +8,6 @@ namespace u_navigator_backend.Infrastructure.Repositories
         Task<User?> GetUserByUsernameAsync(string username);
         Task<User> GetByIdAsync(string id);
         Task AddUserAsync(User user);
+        Task UpdateUserAsync(User user); // Add Update Method
     }
 }
