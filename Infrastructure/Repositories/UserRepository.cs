@@ -13,6 +13,11 @@ namespace u_navigator_backend.Infrastructure.Repositories
             _users = dbContext.Users;
         }
 
+        public async Task<User> GetByIdAsync(string id)
+        {
+            return await _users.Find(u => u.Id == id).FirstOrDefaultAsync();
+        }
+
         public async Task<User?> GetUserByEmailAsync(string email)
         {
             return await _users.Find(u => u.Email == email).FirstOrDefaultAsync();

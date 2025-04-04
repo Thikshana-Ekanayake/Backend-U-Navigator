@@ -45,7 +45,9 @@ builder.Services.AddOpenApi();
 
 // Register dependencies
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
+
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 
 var app = builder.Build();

@@ -6,6 +6,7 @@ namespace u_navigator_backend.Infrastructure.Repositories
     {
         Task<User?> GetUserByEmailAsync(string email);
         Task<User?> GetUserByUsernameAsync(string username);
+        Task<User> GetByIdAsync(string id);
         Task AddUserAsync(User user);
     }
 }
